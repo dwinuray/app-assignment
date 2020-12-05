@@ -97,7 +97,7 @@ public class FragmentAdd extends Fragment {
                     // db
                     db = new Database(getActivity());
                     db.onInsertAssignment(new Assignments(null, setType, setName, setDescription, setDate, setStatus));
-                    Toast.makeText(getActivity(), "200", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "200 " + setStatus, Toast.LENGTH_SHORT).show();
 
                     // back to first fragment
                     FragmentHome fragmentHome = new FragmentHome();

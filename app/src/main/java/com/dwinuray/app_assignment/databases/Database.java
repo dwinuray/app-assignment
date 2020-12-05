@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import com.dwinuray.app_assignment.models.Assignments;
 
@@ -21,6 +22,7 @@ public class Database extends SQLiteOpenHelper {
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -76,5 +78,23 @@ public class Database extends SQLiteOpenHelper {
 
         db.close();
         return dataModelList;
+    }
+
+
+    public void deleteAssignment(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE,"id = " + id, null);
+        db.close();
+    }
+
+
+    public int updateAssignment(Assignments mdNotif) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", mdNotif.getName());
+        values.put("description", mdNotif.getDescription());
+        values.put("date", mdNotif.getDate());
+
+        return db.update(TABLE, values, "id = " + String.valueOf(mdNotif.getId()), null );
     }
 }
