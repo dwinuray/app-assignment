@@ -1,3 +1,8 @@
+/*
+ *  Dev - By Dwi Nur Cahyo
+ *  Github : github.com/dwinuray
+ * */
+
 package com.dwinuray.app_assignment.databases;
 
 import android.content.ContentValues;

@@ -7,6 +7,14 @@
     android:background="#F5F5F5"
     tools:context=".MainActivity">
 
+    <!--
+
+        /*
+        *  Dev - By Dwi Nur Cahyo
+        *  Github : github.com/dwinuray
+        * */
+    -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"

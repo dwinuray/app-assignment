@@ -1,5 +1,10 @@
 package com.dwinuray.app_assignment;
 
+/*
+ *  Dev - By Dwi Nur Cahyo
+ *  Github : github.com/dwinuray
+ * */
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;

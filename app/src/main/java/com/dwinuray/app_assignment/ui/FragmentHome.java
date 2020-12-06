@@ -1,3 +1,8 @@
+/*
+*  Dev - By Dwi Nur Cahyo
+*  Github : github.com/dwinuray
+* */
+
 package com.dwinuray.app_assignment.ui;
 
 import android.content.Context;
@@ -32,7 +37,7 @@ public class FragmentHome extends Fragment {
 
     private AssignmentAdapter adapter_off;
     private Database db;
-    private List<Assignments> ListMahasiswa = new ArrayList<Assignments>();
+    private List<Assignments> listAssignment = new ArrayList<Assignments>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,23 +61,23 @@ public class FragmentHome extends Fragment {
         rv.setLayoutManager( new LinearLayoutManager( getActivity() ));
 
         db = new Database(getActivity());
-        adapter_off = new AssignmentAdapter(getActivity(), ListMahasiswa );
+        adapter_off = new AssignmentAdapter(getActivity(), listAssignment );
 
         rv.setAdapter(adapter_off);
 
-//        rv.setClickable(true);
-        ListMahasiswa.clear();
-        List<Assignments> contacts = db.getAllAssignment();
-        for (Assignments cn : contacts) {
-            Assignments judulModel = new Assignments(null, null, null, null, null, null);
-            judulModel.setId(cn.getId());
-            judulModel.setName(cn.getName());
-            judulModel.setDescription(cn.getDescription().equals("") ? "Catatan Kosong" : cn.getDescription());
-            judulModel.setType(cn.getType().equals("TA") ? "Tugas Akhir " : cn.getType());
-            judulModel.setDate(cn.getDate());
-            judulModel.setStatus(cn.getStatus());
-            ListMahasiswa.add(judulModel);
-            if ((ListMahasiswa.isEmpty()))
+
+        listAssignment.clear();
+        List<Assignments> rowAssignment = db.getAllAssignment();
+        for (Assignments row : rowAssignment) {
+            Assignments assignmentObject = new Assignments(null, null, null, null, null, null);
+            assignmentObject.setId(row.getId());
+            assignmentObject.setName(row.getName());
+            assignmentObject.setDescription(row.getDescription().equals("") ? "Catatan Kosong" : row.getDescription());
+            assignmentObject.setType(row.getType().equals("TA") ? "Tugas Akhir " : row.getType());
+            assignmentObject.setDate(row.getDate());
+            assignmentObject.setStatus(row.getStatus());
+            listAssignment.add(assignmentObject);
+            if ((listAssignment.isEmpty()))
                 Toast.makeText(getActivity(), "Tidak ada data",
                         Toast.LENGTH_SHORT).show();
             else {
@@ -82,7 +87,7 @@ public class FragmentHome extends Fragment {
         }
 
         ConstraintLayout cl = view.findViewById(R.id.default_view);
-        if ( ListMahasiswa.isEmpty() ) {
+        if ( listAssignment.isEmpty() ) {
 
             cl.setVisibility(view.VISIBLE);
         } else {
@@ -92,7 +97,8 @@ public class FragmentHome extends Fragment {
 
     }
 
-    public void set(){
-
-    }
+    /*
+     *  Dev - By Dwi Nur Cahyo
+     *  Github : github.com/dwinuray
+     * */
 }

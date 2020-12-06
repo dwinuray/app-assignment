@@ -1,5 +1,8 @@
 package com.dwinuray.app_assignment.models;
-
+/*
+ *  Dev - By Dwi Nur Cahyo
+ *  Github : github.com/dwinuray
+ * */
 public class Assignments {
 
     private String id ,type, name, description, date, status;
@@ -62,3 +65,8 @@ public class Assignments {
         this.status = status;
     }
 }
+
+/*
+ *  Dev - By Dwi Nur Cahyo
+ *  Github : github.com/dwinuray
+ * */
