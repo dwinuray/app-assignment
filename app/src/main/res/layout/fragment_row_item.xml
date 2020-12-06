@@ -76,9 +76,12 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/latoregular"
                 android:text="TextView"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/lblType"
-                app:layout_constraintTop_toBottomOf="@+id/lblType" />
+                app:layout_constraintTop_toBottomOf="@+id/lblType"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
